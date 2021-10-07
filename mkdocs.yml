@@ -1,5 +1,5 @@
 site_name: Dev Wrangler
-site_url: https://birdcar.github.io/devwrangler
+site_url: https://devwrangler.birdcar.dev
 repo_url: https://github.com/birdcar/devwrangler
 repo_name: birdcar/devwrangler
 #strict: true
@@ -54,22 +54,14 @@ plugins:
         - devwrangler
 extra:
   social:
-    - icon: fontawesome/brands/twitter
-      # replace with your own tweet link below
-      link: https://github.com/waynerv/cookiecutter-pypackage
-      name: Tweet
-    - icon: fontawesome/brands/facebook
-      # replace with your own facebook link below
-      link: https://github.com/waynerv/cookiecutter-pypackage
-      name: Facebook
     - icon: fontawesome/brands/github
-      link: https://github.com/birdcar/devwrangler
+      link: https://github.com/birdcar/birdcar/discussions
       name: Github
     - icon: material/email
-      link: "mailto:devrel@birdcar.dev"
+      link: 'mailto:devrel@birdcar.dev'
   # to enable disqus, uncomment the following and put your disqus id below
   # disqus: disqus_id
 # uncomment the following and put your google tracking id below to enable GA
 #google_analytics:
-  #- UA-xxx
-  #- auto
+#- UA-xxx
+#- auto
