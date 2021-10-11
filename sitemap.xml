@@ -2,32 +2,32 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://devwrangler.birdcar.dev/</loc>
-         <lastmod>2021-10-08</lastmod>
+         <lastmod>2021-10-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://devwrangler.birdcar.dev/api/</loc>
-         <lastmod>2021-10-08</lastmod>
+         <lastmod>2021-10-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://devwrangler.birdcar.dev/changelog/</loc>
-         <lastmod>2021-10-08</lastmod>
+         <lastmod>2021-10-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://devwrangler.birdcar.dev/contributing/</loc>
-         <lastmod>2021-10-08</lastmod>
+         <lastmod>2021-10-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://devwrangler.birdcar.dev/installation/</loc>
-         <lastmod>2021-10-08</lastmod>
+         <lastmod>2021-10-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://devwrangler.birdcar.dev/usage/</loc>
-         <lastmod>2021-10-08</lastmod>
+         <lastmod>2021-10-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
