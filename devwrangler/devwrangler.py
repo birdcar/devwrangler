@@ -96,13 +96,13 @@ def create_virtual_environment(venv_path: Path, logger: Callable = print):
         venv.create(
             venv_path,
             with_pip=True,
-            prompt=str(venv_path.parent),
+            prompt=venv_path.parent.name,
             upgrade_deps=True,
         )
     except TypeError:
         # upgrade_deps was introduced in 3.9, without it we need to make a separate
         # call to run_command
-        venv.create(venv_path, with_pip=True, prompt=str(venv_path.parent))
+        venv.create(venv_path, with_pip=True, prompt=venv_path.parent.name)
         run_command(
             [
                 str(get_py_prefix(venv_path)),
