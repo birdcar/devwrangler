@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.2.1] - 2021-10-10
+
+### Added
+
+* Very basic information has been added to the README file, reflecting the current features of the project.
+
+### Changed
+
+* The virtual environment prompt was being set to the Path to the parent folder, rather than the name of the parent folder itself. This has now been fixed.
+
 ## [0.2.0] - 2021-10-10
 
 ### Added
