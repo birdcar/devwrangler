@@ -1,7 +1,7 @@
 [tool]
 [tool.poetry]
 name = "devwrangler"
-version = "0.1.1"
+version = "0.2.0"
 homepage = "https://github.com/birdcar/devwrangler"
 description = "Bringing peace, freedom, justice, and security to your Python empire."
 authors = ["Nick Cannariato <devrel@birdcar.dev>"]
