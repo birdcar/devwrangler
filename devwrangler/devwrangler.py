@@ -90,24 +90,30 @@ def create_virtual_environment(venv_path: Path, logger: Callable = print):
     """Generate a virtual environment for the user, including special packages."""
     pretty_path = '/'.join(venv_path.parts[-2:])
 
-    if not venv_path.exists():
-        msg = f"Generating virtual environment in {pretty_path}"
-        logger(msg)
-        venv.create(venv_path, with_pip=True)
-    else:
-        msg = logger(f"{pretty_path} exists! Updating pip")
-        logger(msg)
-
-    run_command(
-        [
-            str(get_py_prefix(venv_path)),
-            "-m",
-            "pip",
-            "install",
-            "-U",
-            "pip",
-        ]
-    )
+    msg = f"Generating virtual environment in {pretty_path}"
+    logger(msg)
+    try:
+        venv.create(
+            venv_path,
+            with_pip=True,
+            prompt=str(venv_path.parent),
+            upgrade_deps=True,
+        )
+    except TypeError:
+        # upgrade_deps was introduced in 3.9, without it we need to make a separate
+        # call to run_command
+        venv.create(venv_path, with_pip=True, prompt=str(venv_path.parent))
+        run_command(
+            [
+                str(get_py_prefix(venv_path)),
+                "-m",
+                "pip",
+                "install",
+                "-U",
+                "pip",
+                "setuptools",
+            ]
+        )
 
 
 def install_requirements(
