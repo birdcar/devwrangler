@@ -617,7 +617,7 @@
 
 
 <h3 id="devwrangler.cli.main" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">main</span><span class="p">(</span><span class="n">req_file</span><span class="o">=&lt;</span><span class="n">typer</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">ArgumentInfo</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0x7f345a936b90</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">dev</span><span class="o">=&lt;</span><span class="n">typer</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">ArgumentInfo</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0x7f345a936bc0</span><span class="o">&gt;</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">main</span><span class="p">(</span><span class="n">req_file</span><span class="o">=&lt;</span><span class="n">typer</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">ArgumentInfo</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0x7f846657ab90</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">dev</span><span class="o">=&lt;</span><span class="n">typer</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">ArgumentInfo</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0x7f846657abc0</span><span class="o">&gt;</span><span class="p">)</span></code>
 
 
 <a href="#devwrangler.cli.main" class="headerlink" title="Permanent link">&para;</a></h3>
@@ -718,13 +718,13 @@
         <span class="n">venv</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
             <span class="n">venv_path</span><span class="p">,</span>
             <span class="n">with_pip</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-            <span class="n">prompt</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">venv_path</span><span class="o">.</span><span class="n">parent</span><span class="p">),</span>
+            <span class="n">prompt</span><span class="o">=</span><span class="n">venv_path</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
             <span class="n">upgrade_deps</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
         <span class="p">)</span>
     <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
         <span class="c1"># upgrade_deps was introduced in 3.9, without it we need to make a separate</span>
         <span class="c1"># call to run_command</span>
-        <span class="n">venv</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">venv_path</span><span class="p">,</span> <span class="n">with_pip</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">prompt</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">venv_path</span><span class="o">.</span><span class="n">parent</span><span class="p">))</span>
+        <span class="n">venv</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">venv_path</span><span class="p">,</span> <span class="n">with_pip</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">prompt</span><span class="o">=</span><span class="n">venv_path</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
         <span class="n">run_command</span><span class="p">(</span>
             <span class="p">[</span>
                 <span class="nb">str</span><span class="p">(</span><span class="n">get_py_prefix</span><span class="p">(</span><span class="n">venv_path</span><span class="p">)),</span>
