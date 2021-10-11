@@ -6,7 +6,7 @@ import sys
 import venv
 import warnings
 from pathlib import Path
-from typing import Any, Callable, Optional, Sequence
+from typing import Any, Callable, Dict, Optional, Sequence
 
 DEFAULT_VSCODE_CONFIG = {
     "editor.formatOnSave": True,
@@ -120,7 +120,7 @@ def install_requirements(
     )
 
 
-def parse_config_file(config_file_path: Optional[Path] = None) -> dict[str, Any]:
+def parse_config_file(config_file_path: Optional[Path] = None) -> Dict[str, Any]:
     """Parse a devwrangler JSON file.
 
     >>> parse_config_file(Path.home() / '.devwrangler' / 'config.json')
@@ -133,10 +133,10 @@ def parse_config_file(config_file_path: Optional[Path] = None) -> dict[str, Any]
             return json.load(json_file)
 
 
-def set_workspace_settings(config_data: dict[str, Any], workspace_path: Path):
+def set_workspace_settings(config_data: Dict[str, Any], workspace_path: Path):
     """Save the settings.json file for the project."""
     settings_path = workspace_path / 'settings.json'
-    print("Made it here")
+
     if not workspace_path.exists():
         workspace_path.mkdir()
 
