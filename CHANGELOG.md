@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.2.2] - 2021-11-3
+
+### Fixed
+
+* The `settings.json` file that was output by `pydev` was malformed, and this patch ensures that's no longer the case.
+
 ## [0.2.1] - 2021-10-10
 
 ### Added
