@@ -54,7 +54,8 @@ DEFAULT_VSCODE_CONFIG = {
     "python.sortImports.args": ["--profile", "black"],
     "recommendations": [
         "ms-python.python",
-        "ms-python.vscode-pylance" "hbenl.vscode-test-explorer",
+        "ms-python.vscode-pylance",
+        "hbenl.vscode-test-explorer",
         "littlefoxteam.vscode-python-test-adapter",
         "ms-vscode.test-adapter-converter",
         "samuelcolvin.jinjahtml",
