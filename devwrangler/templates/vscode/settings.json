@@ -1,0 +1,59 @@
+{
+    "editor.formatOnSave": true,
+    "files.associations": {
+        "**/*.html": "html",
+        {% if config["use_django"] %}
+        "**/templates/**/*": "django-txt",
+        "**/templates/**/*.html": "django-html",
+        {% else %}
+        "**/templates/**/*": "jinja",
+        {% for ext, kind in config["jinja"]["types"].items() %}
+        "**/templates/**/*.html": "jinja-{{ kind }}",
+        {% endfor %}
+        {% endif %}
+        "**/requirements{/**,*}.{txt,in}": "pip-requirements"
+    },
+    "python.analysis.diagnosticPublishDelay": 1000,
+    "python.analysis.disabled": [],
+    "python.analysis.errors": [
+        "inherit-non-class",
+        "no-cls-argument",
+        "no-self-argument",
+        "parameter-already-specified",
+        "parameter-missing",
+        "positional-argument-after-keyword",
+        "positional-only-named",
+        "return-in-init",
+        "typing-generic-arguments",
+        "typing-typevar-arguments",
+        "typing-newtype-arguments",
+        "unresolved-import",
+        "undefined-variable"
+    ],
+    "python.analysis.warnings": [
+        "unknown-parameter-name",
+        "variable-not-defined-globally",
+        "variable-not-defined-nonlocal"
+    ],
+    "python.analysis.information": [
+        "too-many-function-arguments",
+        "too-many-positional-arguments-before-star",
+        "no-method-argument"
+    ],
+    "python.autoComplete.addBrackets": true,
+    "python.formatting.provider": "black",
+    "python.languageServer": "Pylance",
+    "python.linting.banditEnabled": true,
+    "python.linting.flake8Enabled": true,
+    "python.linting.flake8Args": ["--max-line-length", "88"],
+    "python.linting.mypyEnabled": false,
+    "python.sortImports.path": "isort",
+    "python.sortImports.args": ["--profile", "black"],
+    "[python]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 4,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true
+        }
+    }
+}
