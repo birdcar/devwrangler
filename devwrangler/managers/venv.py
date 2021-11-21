@@ -1,6 +1,5 @@
 """Implement a venv specific manager for those who prefer to use venv."""
 import venv
-from pathlib import Path
 
 from .base import BaseManager
 
@@ -27,6 +26,7 @@ class VenvManager(BaseManager):
             "pip",
             "setuptools",
         ]
+
         if quiet:
             minimal_dependencies.append("-qqq")
         self.cmd(minimal_dependencies)
