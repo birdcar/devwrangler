@@ -17,7 +17,7 @@ class VenvManager(BaseManager):
 
     def install_dependencies(self, verbose: bool = False):
         """Install environment dependencies."""
-        minimal_dependencies = [
+        PIP_CMD = [
             str(self.prefix),
             "-m",
             "pip",
@@ -27,6 +27,7 @@ class VenvManager(BaseManager):
             "setuptools",
         ]
 
-        if quiet:
-            minimal_dependencies.append("-qqq")
-        self.cmd(minimal_dependencies)
+        if not verbose:
+            PIP_CMD.append("-qqq")
+
+        self.cmd(PIP_CMD)
