@@ -49,4 +49,4 @@ class CondaManager(BaseManager):
         if not verbose:
             CONDA_CMD.append("--quiet")
 
-        self.cmd(CONDA_CMD)
+        self.cmd(CONDA_CMD, critical=True)

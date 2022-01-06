@@ -1,26 +1,36 @@
 """Shell command uitilities for devwrangler."""
 import subprocess as sub
 import sys
-import warnings
 from typing import Sequence
 
+from .logging import LOG
 
-def run_command(command: Sequence[str]):
+
+def run_command(command: str | Sequence[str], critical: bool = False, **kwargs):
     """Attempt to run a specific command in the users's shell.
 
-    >>> run_command(['ls'])
+    >>> run_command('ls')
     """
     try:
-        sub.run(
+        command_process = sub.run(
             command,
+            shell=True,
             check=True,
             encoding="utf-8",
+            capture_output=True,
+            **kwargs,
         )
-    except sub.CalledProcessError:
-        warnings.warn(
+        LOG.critical("Are we getting here?")
+        LOG.debug(command_process.stdout)
+    except sub.CalledProcessError as err:
+        LOG.error(
             (
-                f"Problem encountered when running `{' '.join(command)}`\n\n"
-                f"Review the output above to manually debug the issue"
+                f"Problem encountered when running "
+                f"`{' '.join(command) if type(command)=='list' else command}`"
             )
         )
-        sys.exit(1)
+        LOG.error(err.output)
+
+        if critical:
+            LOG.critical("Required command failed, exiting with status code 1")
+            sys.exit(1)

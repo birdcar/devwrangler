@@ -30,4 +30,4 @@ class VenvManager(BaseManager):
         if not verbose:
             PIP_CMD.append("-qqq")
 
-        self.cmd(PIP_CMD)
+        self.cmd(PIP_CMD, critical=True)
