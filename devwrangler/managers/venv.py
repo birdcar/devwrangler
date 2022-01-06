@@ -1,4 +1,4 @@
-"""Implement a venv specific manager for those who prefer to use venv."""
+"""A wrapper for creating a venv-based dev environment."""
 import venv
 
 from .base import BaseManager
