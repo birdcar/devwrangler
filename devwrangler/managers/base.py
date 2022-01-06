@@ -30,6 +30,6 @@ class BaseManager(abc.ABC):
         pass
 
     @abc.abstractmethod
-    def install_dependencies(self, quiet: bool = True):
+    def install_dependencies(self, verbose: bool = False):
         """Install dependencies into a created environment."""
         pass

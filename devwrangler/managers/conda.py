@@ -13,7 +13,7 @@ class CondaManager(BaseManager):
 
         self.cmd(["conda", "env", "create", "-p", str(self.venv_path)])
 
-    def install_dependencies(self, quiet: bool = True):
+    def install_dependencies(self, verbose: bool = False):
         """Install dependencies from conda's environment.yml file in the root of your project."""
         if not sh.which("conda"):
             raise FileNotFoundError("No conda executable found in your $PATH")

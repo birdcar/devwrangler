@@ -15,7 +15,7 @@ class VenvManager(BaseManager):
             prompt=self.venv_path.parent.name,
         )
 
-    def install_dependencies(self, quiet: bool = True):
+    def install_dependencies(self, verbose: bool = False):
         """Install environment dependencies."""
         minimal_dependencies = [
             str(self.prefix),
