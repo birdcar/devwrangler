@@ -1,3 +1,4 @@
+"""Shell command uitilities for devwrangler."""
 import subprocess as sub
 import sys
 import warnings
