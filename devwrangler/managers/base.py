@@ -9,7 +9,7 @@ from ..utilities.shell import run_command
 class BaseManager(abc.ABC):
     """A standard API for various environment managers."""
 
-    def __init__(self, work_dir: Path):
+    def __init__(self, work_dir: Path = Path.cwd()):
         """Initialize a virtual environment model with venv."""
         self.prefixes = {
             'windows': 'Scripts/python.exe',
