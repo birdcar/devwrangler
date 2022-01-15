@@ -25,7 +25,7 @@ packages = [
 ]
 
 [tool.poetry.scripts]
-pydev = "devwrangler.cli:main"
+pydev = "devwrangler.commands:app"
 
 [tool.poetry.dependencies]
 python = ">=3.6.2,<4.0"
