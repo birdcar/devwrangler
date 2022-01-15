@@ -25,7 +25,7 @@ packages = [
 ]
 
 [tool.poetry.scripts]
-pydev = "devwrangler.cli:main"
+pydev = "devwrangler.commands:app"
 
 [tool.poetry.dependencies]
 python = ">=3.6.2,<4.0"
@@ -40,6 +40,7 @@ mypy = {version = "^0.900", optional = true}
 pytest  = { version = "^6.2.4", optional = true}
 pytest-cov  = { version = "^2.12.0", optional = true}
 tox  = { version = "^3.20.1", optional = true}
+tox-pyenv = { version = "^1.1.0", optional = true }
 virtualenv  = { version = "^20.2.2", optional = true}
 pip  = { version = "^20.3.1", optional = true}
 mkdocs  = { version = "^1.2.3", optional = true}
@@ -64,7 +65,7 @@ test = [
     "pytest-cov"
     ]
 
-dev = ["tox", "pre-commit", "virtualenv", "pip", "twine", "toml", "bump2version"]
+dev = ["tox", "tox-pyenv", "pre-commit", "virtualenv", "pip", "twine", "toml", "bump2version"]
 
 doc = [
     "mkdocs",

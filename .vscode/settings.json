@@ -1,5 +1,6 @@
 {
     "editor.formatOnSave": true,
+    "editor.wordWrap": "off",
     "python.formatting.provider": "black",
     "python.linting.mypyEnabled": true,
     "python.linting.flake8Enabled": true,

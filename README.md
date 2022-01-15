@@ -18,6 +18,19 @@ Bringing peace, freedom, justice, and security to your Python empire
   * your Python project's virtual environment
   * your project's VS Code settings
 
+## Basic Usage
+
+```shell
+$ pydev
+$ pydev create
+$ pydev create --env venv
+$ pydev create --env conda
+$ pyenv configure
+$ pydev configure --editor vscode
+$ pydev configure --editor vscode --extras django,jinja2
+```
+
+
 ## Credits
 
 This package was created with [Cookiecutter](https://github.com/audreyr/cookiecutter) and the [waynerv/cookiecutter-pypackage](https://github.com/waynerv/cookiecutter-pypackage) project template.
